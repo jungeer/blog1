@@ -1,0 +1,231 @@
+
+ul, li {
+  list-style: none;
+}
+.topbg {
+  height: 35px;
+  line-height: 35px;
+  background-color: #f3f3f3;
+}
+.topbg-box {
+  position: relative;
+  margin: 0 auto;
+  width: 1112px;
+}
+.logo span{
+  float: right;
+  font-size: 13.5px;
+}
+.container {
+  width: 1112px;
+  margin: 20px auto;
+}
+.main-title {
+  width: 100%;
+  text-align: justify;
+  font-size: 20px;
+  font-weight: bold;
+}
+header li {
+  margin-left: 20px;
+  display: inline-block;
+  border-right: 1px solid #ededde;
+  width: 120px;
+  height: 53px;
+  line-height: 53px;
+  text-align: center;
+}
+header a {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  font-size: 14.5px;
+  color: black;
+}
+header li a:hover {
+  background-color: #1553a4;
+  color: #fff;
+}
+.focus {
+  background-color: #1553a4;
+  color: #fff;
+}
+/* 登录注册面板 */
+.login-right {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 400px;
+  padding: 20px;
+  background-color: white;
+}
+.login-box {
+  width: 100%;
+}
+.login-row {
+  margin-top: 5px;
+}
+.login-box h2 {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid red;
+}
+.login-box button {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #ededed;
+}
+
+.sign-up {
+  display: none;
+}
+.login-in,
+.register {
+  color: green;
+}
+/* 主内容 */
+.main {
+  min-height: 600px;
+  position: relative;
+}
+.main article {
+  float: left;
+  margin-top: 10px;
+  width: 600px;
+  padding: 20px;
+  background-color: white;
+}
+.main article:last-child:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.pages {
+  display: flex;
+  justify-content: space-between;
+  width: 620px;
+  padding: 10px;
+}
+
+.btn-read-all {
+  width: 100px;
+  height: 30px;
+  border: 1px solid #f3f3f3;
+  border-radius: 3px;
+}
+.btn-read-all a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #39414a;
+}
+.btn-read-all a:hover {
+  background-color: #39414a;
+  color: #fff;
+}
+.main h2 {
+  text-align: center;
+}
+.main .article-info {
+  text-align: center;
+}
+.main article>div {
+  margin-top: 10px;
+}
+
+/* reviews */
+.clear {
+  height: 1px;
+  clear: both;
+}
+.reviews {
+  width: 620px;
+  padding: 10px;
+}
+.reviews-one {
+  display: flex;
+  justify-content: space-between;
+}
+.reviews-two {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  margin-top: 20px;
+}
+.review {
+  flex-grow: 1;
+  border: 1px solid red;
+  resize: none;
+}
+.review-submit {
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  background-color: blue;
+}
+.reviews-three {
+  margin-top: 20px;
+  width: 620px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  background-color: red;
+}
+.reviews-four {
+  margin-top: 20px;
+}
+.reviews-five {
+  margin-top: 20px;
+}
+.reviews-five-head {
+  display: flex;
+  justify-content: space-between;
+}
+.reviews-five-content {
+  margin-top: 10px;
+}
+.reviews-pages {
+  margin-top: 10px;
+  display: flex;
+  width: 620px;
+  justify-content: space-between;
+}
+
+/* 上下页 */
+.page-a {
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  border: 1px solid #39414a;
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+  border-radius: 3px;
+  color: #39414a;
+}
+.page-a:hover {
+  background-color: #39414a;
+  color: #fff;
+}
+
+
+footer {
+  width: 100%;
+  height: 200px;
+  margin-top: 50px;
+  background-color: #f3f3f3;
+}
+footer div {
+  margin: 0 auto;
+  width: 1112px;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+}

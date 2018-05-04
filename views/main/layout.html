@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/public/css/main.css" type="text/css">
+  <script src="/public/js/jquery-3.3.1.min.js"></script>
+  <script src="/public/js/index.js"></script>
+  <title>个人博客</title>
+</head>
+<body>
+  <div class="topbg">
+    <div class="topbg-box">
+      <div class="logo">
+        <img src="" alt="">
+        <span>home</span>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h1 class="main-title">个人博客</h1>
+    <header>
+      <ul>
+        {% if category === '' %}
+        <li><a href="/" class="focus">首页</a></li>
+        {% else %}
+        <li><a href="/">首页</a></li>
+        {% endif %}
+
+        {% for cate in categories %}
+          {% if category === cate.id %}
+            <li><a href="/?category={{cate.id}}" class="focus">{{ cate.name }}</a></li>
+          {% else %}
+            <li><a href="/?category={{cate.id}}">{{ cate.name }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </header>
+    <section class="main">
+        {% block content %}
+
+        {% endblock %}
+
+      <aside class="login login-right">
+
+        {% if userInfo._id %}
+
+        <div class="login-box userinfo">
+          <h2>用户信息</h2>
+          <p class="username">{{ userInfo.username }}</p>
+
+          {% if userInfo.isAdmin %}
+          <p> 你好管理员，<a href="/admin">管理后台</a></p>
+          {% else %}
+          <p> 你好，欢迎观临我的博客!</p>
+          {% endif %}
+          <p><a href="javascript:;" class="logout">退出</a></p>
+        </div>
+
+        {% else %}
+
+        <div class="login-box sign-up">
+          <h2>注册</h2>
+          <div class="login-row"><span>用户名:</span><input type="text" name="username"></div>
+          <div class="login-row"><span>&nbsp;密码:</span><input type="password" name="password"></div>
+          <div class="login-row"><span>&nbsp;确认:</span><input type="password" name="repassword"></div>
+          <div class="login-row"><button class="register-btn">注册</button></div>
+          <div class="login-row"><span class="small-info">已有账号?</span><span class="login-in">马上登录</span></div>
+          <div class="login-row tip-box"><span class="tip"> </span></div>
+        </div>
+        <div class="login-box sign-in">
+          <h2>登录</h2>
+          <div class="login-row"><span>用户名:</span><input type="text" name="username"></div>
+          <div class="login-row"><span>&nbsp;密码:</span><input type="password" name="password"></div>
+          <div class="login-row"><button class="login-btn">登录</button></div>
+          <div class="login-row"><span class="small-info">还没注册?</span><span class="register">马上注册</span></div>
+          <div class="login-row tip-box"><span class="tip"> </span></div>
+        </div>
+
+        {% endif %}
+
+      </aside>
+    </section>
+  </div>
+  <footer>
+    <div>
+      <p>作者: xxx</p>
+    </div>
+  </footer>
+</body>
+</html>

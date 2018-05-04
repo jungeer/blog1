@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<article>
+  <h2>{{ content.title }}</h2>
+  <div class="article-info">
+    <span>作者:</span><span>{{ content.user.username }}</span>
+    <span> - 时间:</span><span>{{ content.addTime|date('Y年m月d日 H:i:s', -8*60) }}</span>
+    <span> - 阅读:</span><span>{{ content.views }}</span>
+    <span> - 评论:</span><span>{{ content.comments.length }}</span>
+  </div>
+  <div class="content">
+    {{ content.content }}
+  </div>
+</article>
+<div class="clear"></div>
+<div class="reviews">
+
+  <div class="reviews-one">
+    <div>评论</div>
+    <div>一共有<span class="reviews-count"></span>条评论</div>
+  </div>
+  {% if userInfo._id %}
+  <div class="reviews-two">
+    <textarea class="review" ></textarea>
+    <input type="hidden" id="contentId" value="{{content.id}}">
+    <div class="review-submit">提交</div>
+  </div>
+  {% else %}
+  <div class="reviews-three">你还没有登录,请先登录</div>
+  {% endif %}
+
+  <div class="reviews-box">
+
+  </div>
+  <!-- <div class="reviews-five">
+    <div class="reviews-five-head">
+      <span>admin</span>
+      <span>2016</span>
+    </div>
+    <div class="reviews-five-content">
+      hhh
+    </div>
+  </div> -->
+
+  </div>
+
+  <div class="reviews-pages">
+    <div class="previous"><a href="">上一页</a></div>
+    <div>hh</div>
+    <div class="next"><a href="">下一页</a></div>
+  </div>
+
+<script src="/public/js/comment.js"></script>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+<ol class="breadcrumb">
+  <li><a href="/">管理首页</a></li>
+  <li><span>用户列表</span></li>
+</ol>
+
+<h3>用户列表</h3>
+
+<table class="table table-hover">
+  <tr>
+    <th>ID</th>
+    <th>用户名</th>
+    <th>密码</th>
+    <th>isAdmin</th>
+  </tr>
+
+  {% for user in users %}
+  <tr>
+    <td>{{ user._id.toString() }}</td>
+    <td>{{ user.username }}</td>
+    <td>{{ user.password }}</td>
+    <td>{{ user.isAdmin }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% include 'page.html' %}
+
+{% endblock %}
